@@ -1,0 +1,83 @@
+/* 
+ * Fix up broken UX and UI of "Proton" to make Firefox usable again
+ * May be integrated via userChrome.css: `@import "proton_fixes.css";`
+ *
+ * Some parts taken from https://www.userchrome.org/firefox-89-styling-proton-ui.html
+ */
+
+/* Use a menu popup border and fix spacing and border-radius */
+:root {
+  --arrowpanel-border-radius: 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+  --arrowpanel-menuitem-margin: 0 !important;
+  --panel-subview-body-padding: 4px 0 !important;
+}
+#PlacesToolbar menupopup {
+  margin-top: 0px !important;
+  padding: 1px 0 !important;
+  border: 1px solid var(--arrowpanel-border-color) !important;
+}
+
+/* Tighten up drop-down/context/popup menu spacing */
+menupopup:not(.in-menulist) > menuitem, 
+menupopup:not(.in-menulist) > menu {
+  padding-block: 4px !important;
+  min-height: unset !important; /* v92.0 - for padding below 4px */
+}
+:root {
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+}
+
+/* Adjust tab corner shape, optionally remove space below tabs */
+#tabbrowser-tabs {
+    --user-tab-rounding: 0px;
+}
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 1px 0 !important;
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
+}
+
+/* Override Normal Density height to Compact Density height only for tabs */
+#TabsToolbar, #tabbrowser-tabs {
+    --tab-min-height: 32px !important;
+}
+/* Tweak for covering a line at the bottom of the active tab on some themes */
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
+    --tab-min-height: 33px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+/* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
+    max-height: calc(var(--tab-min-height) + 1px) !important;
+}
+
+/* Inactive tabs: Separator line style */
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, rgba(0, 0, 0, .20)) !important;
+}
+/* For dark backgrounds */
+[brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20))) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
