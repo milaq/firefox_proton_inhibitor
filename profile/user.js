@@ -78,6 +78,10 @@ user_pref("browser.aboutHomeSnippets.updateUrl", "");
 // Disable privacy breaking speculative pre-connections
 user_pref("network.http.speculative-parallel-limit", 0);
 
+// Disable automatic region update for country specific ads and "features"
+user_pref("browser.region.update.enabled", false);
+user_pref("browser.region.network.url", "");
+
 // Disable GeoIP lookup on your address to set default search engine region
 user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.region", "US");
