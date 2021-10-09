@@ -89,3 +89,7 @@ user_pref("browser.search.geoip.url", "");
 
 // Restore compact mode
 user_pref("browser.compactmode.show", true);
+
+// Disable quicksuggest aka "Inject Mozilla ads into your address bar"
+user_pref("browser.urlbar.suggest.quicksuggest", false);
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
