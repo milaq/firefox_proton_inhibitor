@@ -45,6 +45,15 @@ user_pref("extensions.pocket.enabled", false);
 user_pref("browser.pocket.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
+// Remove "sponsored" content aka ads
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled", false);
+user_pref("browser.urlbar.sponsoredTopSites", false);
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+
 // Disable artificial save file "ok" button delay
 user_pref("dom.disable_open_click_delay", 0);
 
@@ -93,4 +102,3 @@ user_pref("browser.compactmode.show", true);
 
 // Disable quicksuggest aka "Inject Mozilla ads into your address bar"
 user_pref("browser.urlbar.suggest.quicksuggest", false);
-user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
