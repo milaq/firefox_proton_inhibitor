@@ -20,7 +20,10 @@
 
 /* Disable horizontal menu popup item margin */
 .menupopup-arrowscrollbox {
- margin: 0 !important;
+  margin: 0 !important;
+}
+menupopup, panel {
+  margin: 0 !important;
 }
 
 /* Tighten up drop-down/context/popup menu spacing */
