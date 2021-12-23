@@ -18,6 +18,11 @@
   border: 1px solid var(--arrowpanel-border-color) !important;
 }
 
+/* Disable horizontal menu popup item margin */
+.menupopup-arrowscrollbox {
+ margin: 0 !important;
+}
+
 /* Tighten up drop-down/context/popup menu spacing */
 menupopup:not(.in-menulist) > menuitem, 
 menupopup:not(.in-menulist) > menu {
