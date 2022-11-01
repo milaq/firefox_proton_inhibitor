@@ -102,3 +102,6 @@ user_pref("browser.compactmode.show", true);
 
 // Disable quicksuggest aka "Inject Mozilla ads into your address bar"
 user_pref("browser.urlbar.suggest.quicksuggest", false);
+
+// Disable punycode translation to avoid stupid non-ascii homograph attacks
+user_pref("network.IDN_show_punycode", true);
