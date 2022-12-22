@@ -52,7 +52,9 @@ user_pref("browser.newtabpage.activity-stream.discoverystream.sponsored-collecti
 user_pref("browser.urlbar.sponsoredTopSites", false);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.urlbar.suggest.quicksuggest", false);
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+user_pref("browser.urlbar.quicksuggest.enabled", false);
 
 // Disable artificial save file "ok" button delay
 user_pref("dom.disable_open_click_delay", 0);
@@ -100,8 +102,11 @@ user_pref("browser.search.geoip.url", "");
 // Restore compact mode
 user_pref("browser.compactmode.show", true);
 
-// Disable quicksuggest aka "Inject Mozilla ads into your address bar"
-user_pref("browser.urlbar.suggest.quicksuggest", false);
-
 // Disable punycode translation to avoid stupid non-ascii homograph attacks
 user_pref("network.IDN_show_punycode", true);
+
+// Disable URL trimming - reenables display of 'http' prefix
+user_pref("browser.urlbar.trimURLs", false);
+
+// Disable speculative domain resolving
+user_pref("browser.urlbar.speculativeConnect.enabled", false);
