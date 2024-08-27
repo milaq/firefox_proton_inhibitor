@@ -87,7 +87,8 @@ user_pref("network.captive-portal-service.enabled", false);
 // Disable downloading homepage snippets/messages from Mozilla
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
 
-// Disable privacy breaking speculative pre-connections
+// Disable speculative domain resolving and privacy breaking speculative pre-connections
+user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("network.http.speculative-parallel-limit", 0);
 
 // Disable automatic region update for country specific ads and "features"
@@ -95,6 +96,7 @@ user_pref("browser.region.update.enabled", false);
 user_pref("browser.region.network.url", "");
 
 // Disable GeoIP lookup on your address to set default search engine region
+user_pref("geo.enabled", "false");
 user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.region", "US");
 user_pref("browser.search.geoip.url", "");
@@ -108,5 +110,14 @@ user_pref("network.IDN_show_punycode", true);
 // Disable URL trimming - reenables display of 'http' prefix
 user_pref("browser.urlbar.trimURLs", false);
 
-// Disable speculative domain resolving
-user_pref("browser.urlbar.speculativeConnect.enabled", false);
+// Disable "private" ad behavior submission
+user_pref("dom.private-attribution.submission.enabled", false);
+
+// Disable <ping> element tracking
+user_pref("browser.send_pings", false);
+
+// Disable battery tracking
+user_pref("dom.battery.enabled", false);
+
+// Disable selection and copypaste tracking
+user_pref("dom.event.clipboardevents.enabled", false);
