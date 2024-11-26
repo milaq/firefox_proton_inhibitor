@@ -4,3 +4,9 @@
  */
 
 @import "proton_fixes.css";
+
+/* hide tab close buttons
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button {
+  display:none!important;
+}
+*/
